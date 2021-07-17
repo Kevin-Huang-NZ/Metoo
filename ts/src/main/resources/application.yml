@@ -1,0 +1,19 @@
+spring:
+  profiles:    active:      dev
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 50MB
+
+mybatis:
+  mapper-locations: classpath:mapping/*.xml
+
+# pageHelper
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
+logging:
+  config: classpath:logback-${spring.profiles.active}.xml
