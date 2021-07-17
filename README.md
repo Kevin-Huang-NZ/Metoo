@@ -26,3 +26,7 @@
 ## ts
 - 用于运行scaffold工程，只包含一个SpringBootApplication和相关配置。
 - 创建新项目时可以直接拷贝ts
+
+
+## generator
+用于生成crud代码的工程。实现中。
