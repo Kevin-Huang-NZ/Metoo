@@ -31,9 +31,9 @@ INSERT INTO `sys_fun`(`fun_no`,`page_name`,`action_type`,`action_no`,`action_nam
 INSERT INTO `sys_fun`(`fun_no`,`page_name`,`action_type`,`action_no`,`action_name`)VALUES('sysrole/u','sysrole','u','u','更新角色');
 INSERT INTO `sys_fun`(`fun_no`,`page_name`,`action_type`,`action_no`,`action_name`)VALUES('sysrole/d','sysrole','d','d','删除角色');
 INSERT INTO `sys_fun`(`fun_no`,`page_name`,`action_type`,`action_no`,`action_name`)VALUES('sysrole/gbuk','sysrole','e','gbuk','角色详情-gbuk');
-INSERT INTO `sys_fun`(`fun_no`,`page_name`,`action_type`,`action_no`,`action_name`,`memo`)VALUES('sysrolefun/l','sysrole','l','l','角色权限查询','查询某个角色可以访问的功能');
-INSERT INTO `sys_fun`(`fun_no`,`page_name`,`action_type`,`action_no`,`action_name`,`memo`)VALUES('sysrolefun/c','sysrole','c','d','赋予权限','赋予某个角色访问某个功能的权限');
-INSERT INTO `sys_fun`(`fun_no`,`page_name`,`action_type`,`action_no`,`action_name`,`memo`)VALUES('sysrolefun/d','sysrole','c','d','删除权限','取消某个角色访问某个功能的权限');
+INSERT INTO `sys_fun`(`fun_no`,`page_name`,`action_type`,`action_no`,`action_name`,`memo`)VALUES('sysrolefun/l','sysrolefun','l','l','角色权限查询','查询某个角色可以访问的功能');
+INSERT INTO `sys_fun`(`fun_no`,`page_name`,`action_type`,`action_no`,`action_name`,`memo`)VALUES('sysrolefun/c','sysrolefun','c','d','赋予权限','赋予某个角色访问某个功能的权限');
+INSERT INTO `sys_fun`(`fun_no`,`page_name`,`action_type`,`action_no`,`action_name`,`memo`)VALUES('sysrolefun/d','sysrolefun','c','d','删除权限','取消某个角色访问某个功能的权限');
 
 
 INSERT INTO `sys_role_fun`(`role_no`,`fun_no`)VALUES('Z','user/l');

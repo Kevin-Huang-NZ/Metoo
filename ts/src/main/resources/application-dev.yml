@@ -6,9 +6,9 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
     name: dmt
-    url: jdbc:mysql://localhost:3306/dmt?useUnicode=true&useSSL=false&allowPublicKeyRetrieval=true
-    username: dmtuser
-    password: Dmt1218-
+    url: jdbc:mysql://localhost:3306/ts?useUnicode=true&useSSL=false&allowPublicKeyRetrieval=true
+    username: tsuser
+    password: 123456
   devtools:
      restart:
         enabled: true
