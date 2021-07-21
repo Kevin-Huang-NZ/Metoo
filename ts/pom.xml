@@ -12,7 +12,7 @@
 	<artifactId>ts</artifactId>
 	<version>1.0.0</version>
 	<name>ts</name>
-	<description>包含一个Java后台开发用的基础结构和功能。</description>
+	<description>用于运行scaffold工程，只包含一个SpringBootApplication和相关配置。用于创建新项目。</description>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.build.locales>zh_CN</project.build.locales>
