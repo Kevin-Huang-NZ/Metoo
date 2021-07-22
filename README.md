@@ -27,6 +27,15 @@
 - 用于运行scaffold工程，只包含一个SpringBootApplication和相关配置。
 - 创建新项目时可以直接拷贝ts
 
+### 拷贝后的html需要修改
+1. 系统名称：src/setting.js
+2. 图标：dist/中的favicon.ico和logo.png
+
+### 拷贝后的Java工程需要修改
+1. 修改pom文件的说明
+2. 修改包定义
+3. 修改SpringBootApplication启动文件
+4. 修改properties中的数据库链接等配置
 
 ## 三、generator
 用于生成crud代码的工程。实现中。
