@@ -6,7 +6,7 @@ spring:
       max-request-size: 50MB
 
 mybatis:
-  mapper-locations: classpath:mapping/*.xml
+  mapper-locations: classpath:mapping/*.xml,classpath:scaffold-mapping/*.xml
 
 # pageHelper
 pagehelper:

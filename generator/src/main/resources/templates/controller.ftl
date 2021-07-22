@@ -1,7 +1,8 @@
 package [=controllerPkg];
 
-import static mahara.util.CheckUtil.*;
+import static me.too.scaffold.util.CheckUtil.*;
 
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,7 @@ import [=modelPkg].[=modelName];
 import [=servicePkg].[=serviceName];
 import com.github.pagehelper.Page;
 
+import me.too.scaffold.web.controller.BaseController;
 import me.too.scaffold.web.param.CommonRequestParam;
 import me.too.scaffold.web.param.IdWrap;
 import me.too.scaffold.error.BusinessException;
@@ -90,7 +92,7 @@ public class [=controllerName] extends BaseController {
 <#list fields as field>
 <#if field.isNullable == 'NO' >
 <#if field.javaDataType == 'String' >
-		if (!StringUtils.isEmpty([=lcTableName].get[=field.ucColumnName]())) {
+		if (StringUtils.isEmpty([=lcTableName].get[=field.ucColumnName]())) {
 			throw new BusinessException(EmBusinessError.PARAMETER_VALIDATION_ERROR,"[=field.columnTitle]不能为空。");
 		}
 <#else>
@@ -126,7 +128,7 @@ public class [=controllerName] extends BaseController {
         if ([=lcTableName].get[=field.ucColumnName]() != null) {
 <#if field.isNullable == 'NO' >
 <#if field.javaDataType == 'String' >
-			if (!StringUtils.isEmpty([=lcTableName].get[=field.ucColumnName]())) {
+			if (StringUtils.isEmpty([=lcTableName].get[=field.ucColumnName]())) {
 				throw new BusinessException(EmBusinessError.PARAMETER_VALIDATION_ERROR,"[=field.columnTitle]不能为空。");
 			}
 <#else>

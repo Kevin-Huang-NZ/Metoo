@@ -71,13 +71,13 @@
       style="width: 100%;"
       @sort-change="sortChange"
     >
-      <#list fields as field>
+<#list fields as field>
       <el-table-column label="[=field.columnTitle]" align="center">
         <template slot-scope="{row}">
           <span>{{ row.[=field.lcColumnName] }}</span>
         </template>
       </el-table-column>
-      </#list>
+</#list>
       <!--
       <el-table-column label="ID" align="center" width="80px">
         <template slot-scope="{row}">
@@ -129,11 +129,11 @@
 
     <el-dialog :title="textMap[dialogStatus]" :visible.sync="dialogFormVisible">
       <el-form ref="dataForm" :rules="rules" :model="temp" label-position="left" label-width="120px" style="margin-left:50px;margin-right:50px;">
-        <#list fields as field>
+<#list fields as field>
         <el-form-item label="[=field.columnTitle]" prop="[=field.lcColumnName]">
           <el-input v-model="temp.[=field.lcColumnName]" />
         </el-form-item>
-        </#list>
+</#list>
         <!--
         <el-form-item label="生日" prop="birthday">
           <el-date-picker v-model="user.birthday" type="date" format="yyyy-MM-dd" value-format="yyyy-MM-dd" placeholder="" />
@@ -421,7 +421,6 @@ export default {
     },
     // handleDownload() {
     //   this.downloadLoading = true
-
     //   const tempData = {
     //     projectId: this.listQuery.projectId,
     //     pageNum: 1,
@@ -433,17 +432,17 @@ export default {
     //     const { dataList } = response
     //     this.allList = dataList
     //     import('@/vendor/Export2Excel').then(excel => {
-    ////         { v: '备注', c: '外文地名、国别、语种、地理实体类别、备注5列，是导入数据列。其他列在导入时不读取。' },
+    //       // { v: '备注', c: '外文地名、国别、语种、地理实体类别、备注5列，是导入数据列。其他列在导入时不读取。' },
     //       const tHeader = [
                <#list fields as field>
-    //         '[=field.columnTitle]'<#sep>, </#sep>
+    //         '[=field.columnTitle]'<#sep>,</#sep>
                </#list>
-    //         ]
+    //       ]
     //       const filterVal = [
                <#list fields as field>
-    //         '[=field.lcColumnName]'<#sep>, </#sep>
+    //         '[=field.lcColumnName]'<#sep>,</#sep>
                </#list>
-    //         ]
+    //       ]
     //       const data = this.formatJson(filterVal)
     //       excel.export_json_to_excel({
     //         header: tHeader,

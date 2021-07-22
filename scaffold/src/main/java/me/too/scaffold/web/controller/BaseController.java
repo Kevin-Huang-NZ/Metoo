@@ -29,7 +29,7 @@ public class BaseController {
 
 	public static final String CONTENT_TYPE_JSON = "application/json";
 
-	ThreadLocal<User> authContext = new ThreadLocal<>();
+	public ThreadLocal<User> authContext = new ThreadLocal<>();
 
 	@ModelAttribute
 	public void initUser(HttpServletRequest request) {

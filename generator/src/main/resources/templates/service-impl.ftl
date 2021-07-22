@@ -106,7 +106,7 @@ public class [=serviceImplName] implements [=serviceName] {
 
 	<#if hasUniqueKey >
 	public [=modelName] selectByUk(<#list ukFields as field>[=field.javaDataType] [=field.lcColumnName]<#sep>, </#sep></#list>) {
-		return mapper.selectByUniqueKey(<#list ukFields as field>[=field.javaDataType] [=field.lcColumnName]<#sep>, </#sep></#list>, null);
+		return mapper.selectByUniqueKey(<#list ukFields as field>[=field.lcColumnName]<#sep>, </#sep></#list>, null);
 	}
 	</#if>
 }

@@ -123,7 +123,7 @@ public class Generator {
 
 				fieldMap.put("ucColumnName", NameConverter.upperCamel(column.getColumnName()));
 				fieldMap.put("lcColumnName", NameConverter.lowerCamel(column.getColumnName()));
-				fieldMap.put("javaDataType", dataTypeMapper.getDataType(NameConverter.lowerCase(column.getDataType())));
+				fieldMap.put("javaDataType", dataTypeMapper.getJavaDataType(NameConverter.lowerCase(column.getDataType())));
 				
 				fields.add(fieldMap);
 			}
@@ -167,7 +167,7 @@ public class Generator {
 				fieldMap.put("columnName", column.getColumnName());
 				fieldMap.put("columnNameWithPrefix", NameConverter.getColumnNameWithPrefix(column.getColumnName()));
 				fieldMap.put("lcColumnName", NameConverter.lowerCamel(column.getColumnName()));
-				fieldMap.put("jdbcType", NameConverter.upperCase(column.getDataType()));
+				fieldMap.put("jdbcType", dataTypeMapper.getJdbcDataType(NameConverter.lowerCase(column.getDataType())));
 				
 				fields.add(fieldMap);
 			}
@@ -183,7 +183,7 @@ public class Generator {
 					fieldMap.put("columnName", column.getColumnName());
 					fieldMap.put("columnNameWithPrefix", NameConverter.getColumnNameWithPrefix(column.getColumnName()));
 					fieldMap.put("lcColumnName", NameConverter.lowerCamel(column.getColumnName()));
-					fieldMap.put("jdbcType", NameConverter.upperCase(column.getDataType()));
+					fieldMap.put("jdbcType", dataTypeMapper.getJdbcDataType(NameConverter.lowerCase(column.getDataType())));
 					
 					ukFields.add(fieldMap);
 				}
@@ -231,7 +231,7 @@ public class Generator {
 					Map<String, Object> fieldMap = new HashMap<String, Object>();
 
 					fieldMap.put("lcColumnName", NameConverter.lowerCamel(column.getColumnName()));
-					fieldMap.put("javaDataType", dataTypeMapper.getDataType(NameConverter.lowerCase(column.getDataType())));
+					fieldMap.put("javaDataType", dataTypeMapper.getJavaDataType(NameConverter.lowerCase(column.getDataType())));
 					
 					ukFields.add(fieldMap);
 				}
@@ -280,7 +280,7 @@ public class Generator {
 					Map<String, Object> fieldMap = new HashMap<String, Object>();
 
 					fieldMap.put("lcColumnName", NameConverter.lowerCamel(column.getColumnName()));
-					fieldMap.put("javaDataType", dataTypeMapper.getDataType(NameConverter.lowerCase(column.getDataType())));
+					fieldMap.put("javaDataType", dataTypeMapper.getJavaDataType(NameConverter.lowerCase(column.getDataType())));
 					
 					ukFields.add(fieldMap);
 				}
@@ -331,7 +331,7 @@ public class Generator {
 
 				fieldMap.put("ucColumnName", NameConverter.upperCamel(column.getColumnName()));
 				fieldMap.put("lcColumnName", NameConverter.lowerCamel(column.getColumnName()));
-				fieldMap.put("javaDataType", dataTypeMapper.getDataType(NameConverter.lowerCase(column.getDataType())));
+				fieldMap.put("javaDataType", dataTypeMapper.getJavaDataType(NameConverter.lowerCase(column.getDataType())));
 				
 				fields.add(fieldMap);
 			}
@@ -346,7 +346,7 @@ public class Generator {
 
 					fieldMap.put("ucColumnName", NameConverter.upperCamel(column.getColumnName()));
 					fieldMap.put("lcColumnName", NameConverter.lowerCamel(column.getColumnName()));
-					fieldMap.put("javaDataType", dataTypeMapper.getDataType(NameConverter.lowerCase(column.getDataType())));
+					fieldMap.put("javaDataType", dataTypeMapper.getJavaDataType(NameConverter.lowerCase(column.getDataType())));
 					
 					ukFields.add(fieldMap);
 				}
@@ -396,7 +396,7 @@ public class Generator {
 
 				fieldMap.put("ucColumnName", NameConverter.upperCamel(column.getColumnName()));
 				fieldMap.put("lcColumnName", NameConverter.lowerCamel(column.getColumnName()));
-				fieldMap.put("javaDataType", dataTypeMapper.getDataType(NameConverter.lowerCase(column.getDataType())));
+				fieldMap.put("javaDataType", dataTypeMapper.getJavaDataType(NameConverter.lowerCase(column.getDataType())));
 				fieldMap.put("isNullable", NameConverter.upperCase(column.getIsNullable()));
 				fieldMap.put("characterMaximumLength", column.getCharacterMaximumLength());
 				fieldMap.put("columnTitle", this.getColumnTitle(column.getColumnName(), column.getColumnComment()));
@@ -440,7 +440,7 @@ public class Generator {
 				fieldMap.put("ucColumnName", NameConverter.upperCamel(column.getColumnName()));
 				fieldMap.put("lcColumnName", NameConverter.lowerCamel(column.getColumnName()));
 				fieldMap.put("isNullable", NameConverter.upperCase(column.getIsNullable()));
-				if (StringUtils.equals(dataTypeMapper.getDataType(NameConverter.lowerCase(column.getDataType())), "String")) {
+				if (StringUtils.equals(dataTypeMapper.getJavaDataType(NameConverter.lowerCase(column.getDataType())), "String")) {
 					fieldMap.put("maxLen", column.getCharacterMaximumLength());
 				} else {
 					fieldMap.put("maxLen", null);

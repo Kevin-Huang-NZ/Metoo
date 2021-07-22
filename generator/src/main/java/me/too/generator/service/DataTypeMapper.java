@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class DataTypeMapper {
-	private Map<String, String> dataTypeMap = Stream.of(new String[][] { 
+	private Map<String, String> javaDataTypeMap = Stream.of(new String[][] { 
 		{ "char", "String" }, 
 		{ "varchar", "String" }, 
 		{ "bigint", "Long" }, 
@@ -18,10 +18,26 @@ public class DataTypeMapper {
 		{ "timestamp", "Timestamp" }
 	}).collect(Collectors.toMap(data -> data[0], data -> data[1]));
 	
-	public String getDataType(String jdbcType) {
+	private Map<String, String> jdbcDataTypeMap = Stream.of(new String[][] { 
+		{ "char", "CHAR" }, 
+		{ "varchar", "VARCHAR" }, 
+		{ "bigint", "BIGINT" }, 
+		{ "int", "INTEGER" }, 
+		{ "decimal", "DECIMAL" }, 
+		{ "timestamp", "TIMESTAMP" }
+	}).collect(Collectors.toMap(data -> data[0], data -> data[1]));
+	
+	public String getJavaDataType(String jdbcType) {
 		if (StringUtils.isEmpty(jdbcType)) {
 			return null;
 		}
-		return dataTypeMap.get(jdbcType);
+		return javaDataTypeMap.get(jdbcType);
+	}
+	
+	public String getJdbcDataType(String jdbcType) {
+		if (StringUtils.isEmpty(jdbcType)) {
+			return null;
+		}
+		return jdbcDataTypeMap.get(jdbcType);
 	}
 }

@@ -1,37 +1,39 @@
 package me.too.scaffold.util;
 
-import java.text.SimpleDateFormat;
+import java.sql.Timestamp;
 import java.util.Date;
 
-public class DateTimeUtil {
-	public static final SimpleDateFormat DEFAULT_DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-	public static final SimpleDateFormat DATE_FORMAT_DATE = new SimpleDateFormat("yyyy-MM-dd");
+import org.apache.commons.lang3.time.DateFormatUtils;
+//import org.apache.commons.lang3.time.DateUtils;
 
+public class DateTimeUtil {
+	public static final String YMDHMS = "yyyy-MM-dd HH:mm:ss";
+	public static final String YMD = "yyyy-MM-dd";
+	public static final String MD = "MM-dd";
+	public static final String HMS = "HH:mm:ss";
+	public static final String HM = "HH:mm";
 
 	public static long getCurrentTimeInLong() {
 		return System.currentTimeMillis();
 	}
-
-	public static String getCurrentTimeInString() {
-		return String.valueOf(getCurrentTimeInLong());
+	
+	public static String format(long timeInMillis, String dateFormat) {
+		return DateFormatUtils.format(timeInMillis, dateFormat);
 	}
 	
-	public static String formatTime(long timeInMillis, SimpleDateFormat dateFormat) {
-		return dateFormat.format(new Date(timeInMillis));
-	}
-
-	public static String getTimeYMDHms(long timeInMillis) {
-		return formatTime(timeInMillis, DEFAULT_DATE_FORMAT);
+	public static String format(Date date, String dateFormat) {
+		return DateFormatUtils.format(date, dateFormat);
 	}
 	
-	public static String getTimeYMD(long timeInMillis) {
-		return formatTime(timeInMillis, DATE_FORMAT_DATE);
+	public static String format(Timestamp timestamp, String dateFormat) {
+		return DateFormatUtils.format(timestamp, dateFormat);
 	}
 	
-	public static String getCurrentTimeYMDHms() {
-		return formatTime(getCurrentTimeInLong(), DEFAULT_DATE_FORMAT);
+	public static Timestamp getTimestamp(long timeInMillis) {
+		return new Timestamp(timeInMillis);
 	}
-	public static String getCurrentTimeYMD() {
-		return formatTime(getCurrentTimeInLong(), DATE_FORMAT_DATE);
+	
+	public static Timestamp getTimestampCurrent() {
+		return new Timestamp(getCurrentTimeInLong());
 	}
 }

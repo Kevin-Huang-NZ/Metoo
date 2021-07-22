@@ -1,5 +1,6 @@
 package [=mapperPkg];
 
+import java.util.Map;
 import org.apache.ibatis.annotations.Param;
 
 import [=modelPkg].[=modelName];
