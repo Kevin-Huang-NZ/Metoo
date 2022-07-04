@@ -1,5 +1,5 @@
-# Metoo
-做了几个个人项目，在Metoo中总结一下。主要由3个工程组成：常用代码工程（scaffold）、空工程（ts）、代码生成工程（generator）。
+# Youtoo
+做了几个个人项目，在Youtoo中总结一下。主要由3个工程组成：常用代码工程（scaffold）、空工程（ts）、代码生成工程（generator）。
 
 
 ## 一、scaffold
